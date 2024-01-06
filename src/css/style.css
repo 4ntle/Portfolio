@@ -12,10 +12,24 @@
 }
 
 main {
-  max-width: 375px;
-  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-areas:
+    "nav"
+    "info"
+    "projects"
+    "skills";
+    row-gap: 20px;
+  padding: 20px;
 }
-
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 1.5rem 0 2rem 0;
+}
 img {
   width: 100%;
 }
@@ -27,10 +41,10 @@ hr {
 /*  */
 
 nav {
-  margin: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  grid-area: nav;
 }
 /* menu */
 nav > button {
@@ -39,7 +53,7 @@ nav > button {
   background-color: #efefef;
   border: none;
   border-radius: 50px;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-1);
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -82,101 +96,135 @@ nav .switch input[type="checkbox"]:checked ~ label::after {
   border: 1px solid #0060b8;
 }
 
-#info {
-  margin: 10px;
+#info,
+#projects,
+#skills {
+  min-height: 50vh;
+  box-shadow: var(--shadow-1);
+  border-radius: 24px;
+  padding: 20px;
 }
 
-/* info */
-
+#info {
+  grid-area: info;
+}
 #info .content {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: var(--shadow-1);
-  border-radius: 24px;
-  padding: 20px;
 }
 #info .content .profile {
-  width: 200px;
-  height: 200px;
-  background-color: gray;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 #info .content .social {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 #info .content .social a {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  border-radius: 50%;
+  background-color: white;
   box-shadow: var(--shadow-1);
+  border-radius: 50%;
 }
 #info .content .social a img {
-  width: 35px;
+  margin: 8px;
 }
-#info .content h1 {
-  font-size: 1.8rem;
-}
-#info .content p {
-  font-size: 1.3rem;
+#info .content .description p {
+  font-size: 1.2rem;
 }
 
-/* projects */
+/* Projects */
 
-#projects {
+#projects .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 260px));
+  gap: 20px;
+  place-content: center;
+}
+#projects .card-container .card {
+  min-width: 260px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-radius: 24px;
+  padding: 15px;
+  border-radius: 6px;
   box-shadow: var(--shadow-1);
-  margin: 10px;
-  padding: 20px;
 }
-#projects h2 {
-  margin: 1rem auto;
-  font-size: 2.5rem;
-}
-#projects .card {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: var(--shadow-2);
-  border-radius: 12px;
-  padding: 1rem;
+#projects .card-container .card h3 {
   font-size: 1.5rem;
 }
-#projects .card img {
-  border-radius: 12px 12px 0 0;
+#projects .card-container .card p {
+  font-size: 1.2rem;
 }
 
-/* Skills and Learn */
+/* skills */
 
-#skills, #learn {
-  padding: 20px;
-  border-radius: 24px;
-  box-shadow: var(--shadow-1);
-  margin: 10px;
-  padding: 40px 20px 50px;
+#skills {
+  grid-area: skills;
 }
-#skills h2, #learn h2 {
-  margin-bottom: 2rem;
-  text-align: center;
-  font-size: 2.5rem;
-}
+
 #skills .skills-container,
-#learn .learn-container {
+#skills .learn-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
-  row-gap: 30px;
+  gap: 20px;
 }
+
 #skills .skills-container img,
-#learn .learn-container img {
-  width: 60px;
+#skills .learn-container img {
+  width: 70px;
+  height: 70px;
+}
+
+@media screen and (min-width:768px) {
+  .separator {
+    display: none;
+  }
+  
+  main {
+    grid-template-areas: 
+    'nav nav nav'
+    'info info info'
+    'projects projects projects'
+    'skills skills skills'
+    ;
+  }
+
+  /* Nav */
+
+  /* Info */
+
+  #info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #info .content {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #info .content .profile {
+    align-items: end;
+  }
+  #info img {
+    width: 200px;
+  }
+  #info .description {
+    width: 360px;
+  }
+
+  /* Projects */
+
+  
+
+  /* Skills */
+  
 }

@@ -22,57 +22,83 @@
       <!-- info -->
       <section id="info" aria-label="Información sobre Leonardo Rodríguez">
         <article class="content">
-          <div class="profile"><img src="" alt="Foto de perfil" /></div>
-          <div class="social">
-            <a href="https://github.com/4ntle" aria-label="Enlace a GitHub"
-              ><img src="./img/Github.svg" alt="Logo de GitHub"
-            /></a>
-            <a href="#" aria-label="Enlace a LinkedIn"><img src="./img/linkedin.svg" alt="Logo de LinkedIn" /></a>
+          <div class="profile">
+            <img src="https://placehold.co/400x400" alt="Foto de perfil" />
+            <div class="social">
+              <a href="https://github.com/4ntle" aria-label="Enlace a GitHub"
+                ><img src="./img/Github.svg" alt="Logo de GitHub"
+              /></a>
+              <a href="#" aria-label="Enlace a LinkedIn"
+                ><img src="./img/linkedin.svg" alt="Logo de LinkedIn"
+              /></a>
+            </div>
           </div>
-          <hr aria-hidden="true" />
-          <h1>¡Hola!, Soy Leonardo Rodríguez.</h1>
-          <p>
-            Desarrollador front-end apasionado por crear experiencias digitales
-            cautivadoras. Estoy emocionado por la oportunidad de contribuir y
-            crecer profesionalmente en el desarrollo front-end.
-          </p>
+          <hr aria-hidden="true" class="separator"/>
+          <div class="description">
+            <h1>¡Hola!, Soy Leonardo Rodríguez.</h1>
+            <p>
+              Desarrollador front-end apasionado por crear experiencias
+              digitales cautivadoras. Estoy emocionado por la oportunidad de
+              contribuir y crecer profesionalmente en el desarrollo front-end.
+            </p>
+          </div>
         </article>
       </section>
       <!-- projects -->
       <section id="projects">
         <h2>Proyectos</h2>
-        <article class="card">
-          <img src="https://placehold.co/400x300" alt="Imagen del proyecto Forus - Red Social" />
-          <h3>Forus - Red Social</h3>
-          <p>
-            Proyecto final realizado con los conocimientos aprendidos en
-            la universidad.
-          </p>
-        </article>
-        <article class="card">
-          <img src="./img/bilingues.png" alt="Imagen del proyecto Bilingües - Centro de Lenguas Modernas" />
-          <h3>Bilingües - Centro de Lenguas Modernas</h3>
-          <p>Actualización de página de la universidad.</p>
-        </article>
+        <section class="card-container">
+          <article class="card">
+            <img
+              src="https://placehold.co/400x250"
+              alt="Imagen del proyecto Forus - Red Social"
+            />
+            <h3>Forus - Red Social</h3>
+            <p>
+              Proyecto final realizado con los conocimientos aprendidos en la
+              universidad.
+            </p>
+          </article>
+          <article class="card">
+            <img
+              src="./img/bilingues.png"
+              alt="Imagen del proyecto Bilingües - Centro de Lenguas Modernas"
+            />
+            <h3>Bilingües - Centro de Lenguas Modernas</h3>
+            <p>Actualización de página de la universidad.</p>
+          </article>
+        </section>
       </section>
       <section id="skills">
-        <h2>Habilidades</h2>
-        <article class="skills-container">
-          <img src="./img/HTML5.svg" alt="Logo de HTML5">
-          <img src="./img/CSS3.svg" alt="Logo de CSS3">
-          <img src="./img/Bootstrap.svg" alt="Logo de Bootstrap">
-          <img src="./img/js.svg" alt="Logo de JavaScript">
-          <img src="./img/react.svg" alt="Logo de React.js">
-          <img src="./img/tailwind.svg" alt="Logo de Tailwind">
-          <img src="./img/wordpress.svg" alt="Logo de Wordpress">
+        <article>
+          <h2>Habilidades</h2>
+          <article class="skills-container">
+            <img src="./img/HTML5.svg" alt="Logo de HTML5" />
+            <img src="./img/CSS3.svg" alt="Logo de CSS3" />
+            <img src="./img/Bootstrap.svg" alt="Logo de Bootstrap" />
+            <img src="./img/js.svg" alt="Logo de JavaScript" />
+            <img src="./img/react.svg" alt="Logo de React.js" />
+            <img src="./img/tailwind.svg" alt="Logo de Tailwind" />
+            <img src="./img/wordpress.svg" alt="Logo de Wordpress" />
+          </article>
+        </article>
+        <article>
+          <h2>Aprendiendo</h2>
+          <article class="learn-container">
+            <img src="./img/typescript.svg" alt="Logo de TypeScript" />
+            <img src="./img/Go.svg" alt="Logo de GO/Golang" />
+          </article>
         </article>
       </section>
-      <section id="learn">
-        <h2>Aprendiendo</h2>
-        <article class="learn-container">
-          <img src="./img/typescript.svg" alt="Logo de TypeScript">
-          <img src="./img/Go.svg" alt="Logo de GO/Golang">
-        </article>
+      <section id="contact">
+        <form>
+          <label for="name"></label>
+          <input type="mail" id="name">
+          <label for="email"></label>
+          <input type="mail" id="email">
+          <label for="message"></label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </form>
       </section>
     </main>
   </body>
